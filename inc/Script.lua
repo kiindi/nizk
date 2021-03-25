@@ -3587,7 +3587,7 @@ end
 
 if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
 if not msg.SudoBase then return "★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
-local GetVerison = https.request('https://raw.githubusercontent.com/kiindi/kiindi.github.io/main/GetVersion.txt') or "0"
+local GetVerison = https.request('https://raw.githubusercontent.com/kiindi/kiindi.github.io/root/GetVersion.txt') or "0"
 GetVerison = GetVerison:gsub("\n",""):gsub(" ","")
 if GetVerison > version then
 UpdateSourceStart = true
@@ -4378,7 +4378,7 @@ TText = " الملف موجود بالفعل \n★︎ تم تحديث الملف
 else
 TText = "★︎ تم تثبيت وتفعيل الملف بنجاح \n"
 end
-local Get_Files, res = https.request("https://raw.githubusercontent.com/kiindi/nk/main/plugins/"..FileName)
+local Get_Files, res = https.request("https://raw.githubusercontent.com/kiindi/kiindi.github.io/root/plugins/"..FileName)
 if res == 200 then
 print("DONLOADING_FROM_URL: "..FileName)
 local FileD = io.open("plugins/"..FileName,'w+')
