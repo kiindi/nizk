@@ -1,4 +1,3 @@
-
 local function iNk(msg,MsgText)
 
 if msg.forward_info_ then return false end
@@ -3595,7 +3594,7 @@ sendMsg(msg.chat_id_,msg.id_,'★︎  يوجد تحديث جديد الان \n�
 redis:set(nk..":VERSION",GetVerison)
 return false
 else
-return "★︎ الاصدار الحالي : *v"..version.."* \n★︎  لديـك احدث اصدار\n - [النيزك](t.me/TH3NK)"
+return "★︎ الاصدار الحالي : *v"..version.."* \n★︎  لديـك احدث اصدار\n - [سـُورس النـَزيكـ](t.me/TH3NK)"
 end
 return false
 end
