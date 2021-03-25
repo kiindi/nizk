@@ -44,7 +44,7 @@ if not Token then
 io.write('\n\27[1;33m￤هات التوكن  ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
 Token = io.read():gsub(' ','')
 if Token == '' then
-print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤حضرتك انت مدخلتش حاجة ,دخل التوكن يسطا')
+print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤حضرتك انت مدخلتش حاجة ,دخل التوكن ')
 create_config()
 end
 Api_Token = 'https://api.telegram.org/bot'..Token
@@ -56,9 +56,9 @@ end
 local GetToken = JSON.decode(url)
 BOT_NAME = GetToken.result.first_name
 BOT_User = "@"..GetToken.result.username
-io.write('\n\27[1;36m￤تم ادخال التوكن شكرا يسطا   \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
+io.write('\n\27[1;36m￤تم ادخال التوكن شكرا    \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
 end
-io.write('\n\27[1;33m￤هات ايدي المطور الاساسي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
+io.write('\n\27[1;33m￤ ايدي المطور الاساسي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
 SUDO_USER = io.read():gsub(' ','')
 if SUDO_USER == '' then
 print('\n\27[1;31m￤ You Did not Enter USERID !\n￤ يسطااا ايدي المطور الاساسي ركز شوية')
@@ -78,7 +78,7 @@ print('\n\27[1;31m￤ Conect is Failed !\n￤تواصل مع @F55S5 لأنه ي�
 create_config(Token)
 end
 GetUser.result.username = GetUser.result.username or GetUser.result.first_name
-print('\n\27[1;36m￤شكرا لإستخدامك سورس ويـزرد يجميل.\n￤Success Save USERID : \27[0;32m['..SUDO_USER..']\n\27[0;39;49m')
+print('\n\27[1;36m￤شكرا لإستخدامك سورس النيزك .\n￤Success Save USERID : \27[0;32m['..SUDO_USER..']\n\27[0;39;49m')
 nk = Token:match("(%d+)")
 redis:set(nk..":VERSION",1)
 redis:set(nk..":SUDO_ID:",SUDO_USER)
@@ -115,7 +115,7 @@ local TokenBot = io.open('./inc/Token.txt', "r")
 if not TokenBot then
 print('\27[0;33m>>'..[[
 ---------------------------------------------------------------------
-@r00t94
+@TH3NK
 ---------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config()
@@ -148,7 +148,7 @@ end
 
 print('\27[0;33m>>'..[[
 -------------------------------------------------------------------
-@r00t94
+@TH3NK
 -------------------------------------------------------------------
 
 ]]..'\027[0;32m'
