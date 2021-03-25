@@ -410,13 +410,13 @@ end
 function UpdateSource(msg,edit)
 if edit then EditMsg(msg.chat_id_,msg.id_,'10% - |█    @kiindi     |') end
 if edit then EditMsg(msg.chat_id_,msg.id_,'20% - |███  @kiindi       |') end
-download_file('https://raw.githubusercontent.com/kiindi/nk/main/inc/Run.lua','./inc/Run.lua')
+download_file('https://raw.githubusercontent.com/kiindi/nizk/root/inc/Run.lua','./inc/Run.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'40% - |█████  @kiindi     |') end
-download_file('https://raw.githubusercontent.com/kiindi/nk/main/inc/locks.lua','./inc/locks.lua')
+download_file('https://raw.githubusercontent.com/kiindi/nizk/root/inc/locks.lua','./inc/locks.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'60% - |███████  @kiindi   |') end
-download_file('https://raw.githubusercontent.com/kiindi/nk/main/inc/Script.lua','./inc/Script.lua')
+download_file('https://raw.githubusercontent.com/kiindi/nizk/root/inc/Script.lua','./inc/Script.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████ @kiindi  |') end
-download_file('https://raw.githubusercontent.com/kiindi/nk/main/inc/functions.lua','./inc/functions.lua')
+download_file('https://raw.githubusercontent.com/kiindi/nizk/root/inc/functions.lua','./inc/functions.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n تم تحديث السورس الى اصدار *v'..redis:get(nk..":VERSION")..'*\n تم اعاده تشغيل السورس بنجاح\n - @TH3NK') end
 if edit then dofile("./inc/Run.lua") end
 print("Update Source And Reload ~ ./inc/Run.lua")
