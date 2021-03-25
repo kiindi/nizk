@@ -2067,7 +2067,7 @@ end
 
 if MsgText[2] and MsgText[2]:match('^%d+$') then
 if not msg.Director then return "★︎  هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n" end
-if 100 < tonumber(MsgText[2]) then return "★︎  حدود المسح ,  يجب ان تكون ما بين  *[2-100]*" end
+if 500 < tonumber(MsgText[2]) then return "★︎  حدود المسح ,  يجب ان تكون ما بين  *[2-500]*" end
 local DelMsg = MsgText[2] + 1
 GetHistory(msg.chat_id_,DelMsg,function(arg,data)
 All_Msgs = {}
