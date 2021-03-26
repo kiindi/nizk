@@ -2674,7 +2674,7 @@ if MsgText[1] == "تفعيل الاذاعه" or MsgText[1] =="تفعيل الا�
 
 
 if MsgText[1] == 'مسح المطورين'  then
-if not msg.SudoBase then return "★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local mtwren = redis:scard(nk..':SUDO_BOT:')
 if mtwren == 0 then  return "★︎  عذرا لا يوجد مطورين في البوت  ✖️" end
 redis:del(nk..':SUDO_BOT:') 
@@ -2682,7 +2682,7 @@ return "★︎  تم مسح {* "..mtwren.." *} من المطورين \n"
 end
 
 if MsgText[1] == 'مسح قائمه العام'  then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local addbannds = redis:scard(nk..'gban_users')
 if addbannds ==0 then 
 return "قائمة الحظر فارغه ." 
@@ -3420,17 +3420,17 @@ return GetListGeneralBanned(msg)
 end
 
 if MsgText[1] == "تعطيل التواصل" or MsgText[1]=="تعطيل التواصل ✖️" then 
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return lock_twasel(msg) 
 end
 
 if MsgText[1] == "تفعيل التواصل" or MsgText[1]=="تفعيل التواصل " then 
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return unlock_twasel(msg) 
 end
 
 if MsgText[1] == "حظر عام" then
-if not msg.SudoBase then return "★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 if not MsgText[2] and msg.reply_id then 
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
 if not data.sender_user_id_ then return sendMsg(arg.ChatID,arg.MsgID,"★︎  عذرا هذا العضو ليس موجود ضمن المجموعات \n") end
@@ -3491,7 +3491,7 @@ return false
 end
 
 if MsgText[1] == "الغاء العام" or MsgText[1] == "الغاء عام" then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 
 if not MsgText[2] and msg.reply_id then 
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
@@ -3575,7 +3575,7 @@ return '★︎  تم آلغآء آلآمـر بنجآح \n'
 end  
 
 if (MsgText[1] == '/files' or MsgText[1]== "الملفات 🗂" or MsgText[1]== "الملفات" ) then
-if not msg.SudoBase then return "★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return All_File()
 end   
 
@@ -3585,7 +3585,7 @@ return '★︎ اصدار سورس النيزك*v'..version..'* \n'
 end
 
 if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
-if not msg.SudoBase then return "★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local GetVerison = https.request('https://raw.githubusercontent.com/kiindi/kiindi.github.io/root/GetVersion.txt') or "0"
 GetVerison = GetVerison:gsub("\n",""):gsub(" ","")
 if GetVerison > version then
@@ -3601,12 +3601,12 @@ end
 
 
 if MsgText[1] == 'نسخه احتياطيه للمجموعات' then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return buck_up_groups(msg)
 end 
 
 if MsgText[1] == 'رفع نسخه الاحتياطيه' then
-if not msg.SudoBase then return "★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 if msg.reply_id then
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg, data)
 if data.content_.ID == 'MessageDocument' then
@@ -3646,7 +3646,7 @@ return false
 end
 
 if (MsgText[1]=="تيست" or MsgText[1]=="test") then 
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return " البوت شـغــال" 
 end
 
@@ -3661,12 +3661,12 @@ end
 
 
 if (MsgText[1]== "الاحصائيات " or MsgText[1]=="الاحصائيات") then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return 'الاحصائيات :  \n\n عدد المجموعات المفعله : '..redis:scard(nk..'group:ids')..'\n★︎  عدد المشتركين في البوت : '..redis:scard(nk..'users')..'\n'
 end
 ---------------[End Function data] -----------------------
 if MsgText[1]=="اضف رد عام" or MsgText[1]=="اضف رد عام ➕" then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 redis:setex(nk..'addrd_all:'..msg.chat_id_..msg.sender_user_id_,300,true)
 redis:del(nk..'allreplay:'..msg.chat_id_..msg.sender_user_id_)
 return "★︎  حسننا الان ارسل كلمة الرد العام \n"
@@ -3674,12 +3674,12 @@ end
 
 ---------------[End Function data] -----------------------
 if MsgText[1] == "تعيين كليشه الستارت" or MsgText[1] == "تعيين كليشة الستارت" or MsgText[1] == "تعيين كليشه الستارت " then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 redis:setex(nk..':KStart:'..msg.chat_id_..msg.sender_user_id_,900,true)
 return "★︎  حسننا الان ارسل كليشة الستارت \n\n علما ان الاختصارات كالاتي : \n \n#name : لوضع اسم المستخدم\n#id : لوضع ايدي المستخدم\n#username : لوضع معرف المستخدم \n#stast : لوضع نوع رتبه المستخدم \n#bot : لاضهار اسم البوت \n{المطور} : لاضهار معرف المطور الاساسي ."
 end
 if MsgText[1] == "مسح كليشه الستارت" or MsgText[1] == "مسح كليشة الستارت" or MsgText[1] == "مسح كليشه الستارت " then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 redis:del(nk..':Text_Start')
 return "★︎  تم مسح كليشه الستارت "
 end
@@ -3704,7 +3704,7 @@ end
 end
 
 if MsgText[1] == 'مسح' and MsgText[2] == 'الردود العامه' then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local names 	= redis:exists(nk..'replay:all')
 local photo 	= redis:exists(nk..'replay_photo:group:')
 local voice 	= redis:exists(nk..'replay_voice:group:')
@@ -3722,7 +3722,7 @@ end
 end
 
 if MsgText[1]== 'مسح' and MsgText[2]== 'رد عام' then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 redis:set(nk..'delrdall:'..msg.sender_user_id_,true) 
 return "★︎  حسننا عزيزي  \n★︎  الان ارسل الرد لمسحها من  المجموعات "
 end
@@ -3889,7 +3889,7 @@ return "★︎  حسننا , الان ارسل كلمه الرد \n-"
 end
 
 if MsgText[1] == "ضع اسم للبوت" or MsgText[1]== 'ضع اسم للبوت ©' then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 redis:setex(nk..'namebot:witting'..msg.sender_user_id_,300,true)
 return"★︎  حسننا عزيزي  \n★︎  الان ارسل الاسم  للبوت "
 end
@@ -4279,7 +4279,7 @@ return false
 end
 
 if MsgText[1]== "اوامر الملفات" then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local text = [[ اهلا بك في قائمة اوامر الملفات
 ★︎  للاستفسار - []]..SUDO_USER..[[]
 
@@ -4346,7 +4346,7 @@ Welcome To Source NiZk
 end
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
-if not msg.SudoBase then return "★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local Get_Files, res = https.request("https://kiindi.github.io/GetFiles.json")
 print(Get_Files)
 print(res)
@@ -4378,7 +4378,7 @@ return false
 end
 
 if MsgText[1]:lower() == "sp" and MsgText[2] then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local FileName = MsgText[2]:lower()
 local Check_File_is_Found = io.open("plugins/"..FileName,"r")
 if Check_File_is_Found then
@@ -4402,7 +4402,7 @@ end
 end
 
 if MsgText[1]:lower() == "dp" and MsgText[2] then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local FileName = MsgText[2]:lower()
 local Check_File_is_Found = io.open("plugins/"..FileName,"r")
 if Check_File_is_Found then
@@ -4426,7 +4426,7 @@ return "\n الـتـاريـخ : "..os.date("%Y/%m/%d")
 end
 
 if MsgText[1] == "تفعيل الاشتراك الاجباري" then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 if redis:get(nk..":UserNameChaneel") then
 return " اهلا عزيزي المطور \n★︎ الاشتراك بالتأكيد مفعل"
 else
@@ -4436,7 +4436,7 @@ end
 end
 
 if MsgText[1] == "تعطيل الاشتراك الاجباري" then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local SubDel = redis:del(nk..":UserNameChaneel")
 if SubDel == 1 then
 return "★︎ تم تعطيل الاشتراك الاجباري . \n"
@@ -4446,7 +4446,7 @@ end
 end
 
 if MsgText[1] == "الاشتراك الاجباري" then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local UserChaneel = redis:get(nk..":UserNameChaneel")
 if UserChaneel then
 return "★︎ اهلا عزيزي المطور \n★︎ الاشتراك الاجباري للقناة : ["..UserChaneel.."]\n"
@@ -4456,7 +4456,7 @@ end
 end
 
 if MsgText[1] == "تغيير الاشتراك الاجباري" then
-if not msg.SudoBase then return"★︎  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
 redis:setex(nk..":ForceSub:"..msg.sender_user_id_,350,true)
 return " مرحبا بـك في نظام الاشتراك الاجباري\n★︎ الان ارسل معرف قـنـاتـك"
 end
