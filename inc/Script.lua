@@ -3311,14 +3311,7 @@ return'★︎  شـرط آلتفعيل آلبوت آذآ كآنت آلمـجمـ
 end 
 end
 
-if msg.text and msg.type == "channel" then
-if msg.text:match("^"..Bot_Name.." غادر$") and (msg.SudoBase or msg.SudoUser) then
-sendMsg(msg.chat_id_,msg.id_,'أسـتَودعكمـ الله.') 
-rem_data_group(msg.chat_id_)
-StatusLeft(msg.chat_id_,our_id)
-return false
-end
-end
+
 if MsgText[1] == 'المجموعات' or MsgText[1] == "المجموعات 🔝" then 
 if not msg.SudoUser then return "★︎  هذا الامر يخص {المطور} فقط  \n" end
 return '★︎ عدد المجموعات المفعلة ⇠ `'..redis:scard(nk..'group:ids')..'`  ➼' 
@@ -5415,7 +5408,14 @@ return sendMsg(msg.chat_id_,msg.id_,'★︎  تم اذاعه التوجيه بن
 end
 
 
-
+if msg.text and msg.type == "channel" then
+if msg.text:match("^"..Bot_Name.." غادر$") and (msg.SudoBase or msg.SudoUser) then
+sendMsg(msg.chat_id_,msg.id_,'اوك باي') 
+rem_data_group(msg.chat_id_)
+StatusLeft(msg.chat_id_,our_id)
+return false
+end
+end
 
 
 if msg.content_.ID == "MessagePhoto" and redis:get(nk..'welcom_ph:witting'..msg.sender_user_id_) then
