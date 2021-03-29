@@ -4513,18 +4513,19 @@ else
 redis:sadd(nk..'users',msg.sender_user_id_)
 SUDO_USER = redis:hgetall(nk..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USERR = "★︎  مـعرف آلمـطـور  : "..SUDO_USER
+SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  : "..SUDO_USER
 else
 SUDO_USERR = ""
 end
 
 
-text = [[★︎  مـرحبآ آنآ بوت آسـمـي []]..redis:get(nk..':NameBot:')..[[] 
-★︎  يمكنني حمايه المجموعات من السبام والتوجيه الخ....
-★︎ [قـناة الـسورس](T.ME/TH3NK) 
-]]..SUDO_USERR..[[
+text = [[💯¦ مـرحبآ آنآ بوت آسـمـي []]..redis:get(nk..':NameBot:')..[[] 🎖
+💰¦ آختصـآصـي حمـآيهہ‌‏ آلمـجمـوعآت
+📛¦ مـن آلسـبآم وآلتوجيهہ‌‏ وآلتگرآر وآلخ...
+🚸¦ البوت خـدمي متاح للجميع 
+]]..SUDO_USERR..[[ 👨🏽‍🔧
 
-★︎ ]]
+☄]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ else Name = data.first_name_ end
 text = redis:get(nk..':Text_Start') or text
@@ -4540,7 +4541,7 @@ text = text:gsub("#bot",redis:get(nk..':NameBot:'))
 text = text:gsub("{المطور}",SUDO_USER)
 xsudouser = SUDO_USER:gsub('@','')
 xsudouser = xsudouser:gsub([[\_]],'_')
-local inline = {{{text="آلمـطـور ™",url="t.me/"..xsudouser}}}
+local inline = {{{text="آلمـطـور",url="t.me/"..xsudouser}}}
 send_key(msg.sender_user_id_,Flter_Markdown(text),nil,inline,msg.id_)
 end,nil)
 return false
