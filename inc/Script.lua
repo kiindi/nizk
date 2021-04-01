@@ -4330,19 +4330,19 @@ end
 
 if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
 return [[
-Welcome To Source NiZk 
+**Welcome To Source NiZk**
     
-🦁┇𝕿𝙴𝙰𝙼 𝙽𝙸𝚉𝙺 
+**🦁┇𝕿𝙴𝙰𝙼 𝙽𝙸𝚉𝙺** 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📬┇ [Source Channel](https://t.me/TH3NK)
+**📬┇** [Source Channel](https://t.me/TH3NK)
     
-📊┇ [Source Install](https://t.me/TH3NK/171)
+**📊┇** [Source Install](https://t.me/TH3NK/171)
     
-🆔┇ [Changing ID Channel](https://t.me/Nizk_id/1)
+**🆔┇** [Changing ID Channel](https://t.me/Nizk_id/1)
     
-📋┇ [Telegram](https://t.me/teelagram)
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-📮┇ [Source Programmer](https://t.me/kiindi)
+**📋┇** [Telegram](https://t.me/teelagram)
+**┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ **
+**📮┇** [Source Programmer](https://t.me/kiindi)
 ]]
 end
 
