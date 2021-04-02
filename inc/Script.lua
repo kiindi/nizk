@@ -3952,7 +3952,7 @@ end
 if MsgText[1] == "الاوامر" then
 if not msg.Admin then return "هذا الامر ليس لك عزيزي .  \n" end
 SUDO_USER = redis:hgetall(nk..'username:'..SUDO_ID).username
-text = [[ اهلا بك في اوامر البوتوت 
+text = [[ اهلا بك في اوامر البوت 
 ★︎  للاستفسار - []]..SUDO_USER..[[]
 
 • م1 - لعرض اوامر الاداره
