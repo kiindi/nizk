@@ -44,28 +44,28 @@ if not Token then
 io.write('\n\27[1;33m￤هات التوكن  ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
 Token = io.read():gsub(' ','')
 if Token == '' then
-print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤حضرتك انت مدخلتش حاجة ,دخل التوكن ')
+print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤التوكن الذي ادخلته خطأ ')
 create_config()
 end
 Api_Token = 'https://api.telegram.org/bot'..Token
 local url , res = https.request(Api_Token..'/getMe')
 if res ~= 200 then
-print('\n\27[1;31m￤ Your Token is Incorrect Please Check it!\n￤ التوكن الي دخلته غلط جرب تاني')
+print('\n\27[1;31m￤ Your Token is Incorrect Please Check it!\n￤ التوكن الي ادخلته خطا حاول مرة اخرى')
 create_config()
 end
 local GetToken = JSON.decode(url)
 BOT_NAME = GetToken.result.first_name
 BOT_User = "@"..GetToken.result.username
-io.write('\n\27[1;36m￤تم ادخال التوكن شكرا    \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
+io.write('\n\27[1;36m￤تم ادخال التوكن     \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
 end
 io.write('\n\27[1;33m￤ ايدي المطور الاساسي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
 SUDO_USER = io.read():gsub(' ','')
 if SUDO_USER == '' then
-print('\n\27[1;31m￤ You Did not Enter USERID !\n￤ يسطااا ايدي المطور الاساسي ركز شوية')
+print('\n\27[1;31m￤ You Did not Enter USERID !\n￤  ايدي المطور الاساسي يرجى التركيز قليلا')
 create_config(Token)
 end 
 if not SUDO_USER:match('(%d+)(%d+)(%d+)(%d+)(%d+)') then
-print('\n\27[1;31m￤ This is Not USERID !\n￤الايدي ده مش موجود ')
+print('\n\27[1;31m￤ This is Not USERID !\n￤الايدي هذا ليس موجود ')
 create_config(Token)
 end 
 print('('..SUDO_USER..')')
@@ -74,7 +74,7 @@ GetUser = json:decode(url)
 if res ~= 200 then
 end
 if GetUser.ok == false then
-print('\n\27[1;31m￤ Conect is Failed !\n￤تواصل مع @F55S5 لأنه يوجد خطأ لديك.')
+print('\n\27[1;31m￤ Conect is Failed !\n￤يوجد خطأ يرجى التواصل مع مطور السورس.')
 create_config(Token)
 end
 GetUser.result.username = GetUser.result.username or GetUser.result.first_name
