@@ -6643,7 +6643,7 @@ elseif not msg.SudoUser and Text== Bot_Name and not Text2 then
 return sendMsg(msg.chat_id_,msg.id_,ss97[math.random(#ss97)])
 elseif Text:match("^قول (.*)$") then
 if utf8.len(Text:match("^قول (.*)$")) > 50 then 
-return sendMsg(msg.chat_id_,msg.id_,"مقدرش اقول اكتر من خمسين حرف يبعمو")
+return sendMsg(msg.chat_id_,msg.id_,"لا يمكنني القول أكثر من 50 كلمة.")
 end
 local callback_Text = FlterName(Text:match("^قول (.*)$"),50)
 if callback_Text and callback_Text == 'الاسم سبام ' then
@@ -6651,50 +6651,8 @@ return sendMsg(msg.chat_id_,msg.id_," للاسف النص هذا مخالف ")
 else
 return sendMsg(msg.chat_id_,0,callback_Text) 
 end
-elseif Text:match("^"..Bot_Name.." اتفل (.*)$") then
-if msg.reply_id then
-sendMsg(msg.chat_id_,msg.id_,'اوك سيدي .')
-sendMsg(msg.chat_id_,msg.reply_id,'ختفوووووووووو')
-else 
-return sendMsg(msg.chat_id_,msg.id_,"فينو")
-end
-elseif Text:match("^"..Bot_Name.." رزله(.*)$") and msg.SudoUser then
-if msg.reply_id then
-sendMsg(msg.chat_id_,msg.id_,'اوك سيدي .')
-return sendMsg(msg.chat_id_,msg.reply_id,'تعال هيوو   شو طالعه عينك ولسانك طويل سربوت  اشو تعال بله شنو هاذ ويهك هاذ  قول بلعباس , لك #دي وتفو بعد لتندك بتاج راسك خوش حمبقلبي') 
-end
-elseif Text:match("^بوس (.*)$") then 
-if msg.reply_id then 
-return sendMsg(msg.chat_id_,msg.reply_id,bs[math.random(#bs)])
-else
-return sendMsg(msg.chat_id_,msg.id_,"فينو")
-end 
-elseif msg.SudoUser and Text=="هلو" then 
-return sendMsg(msg.chat_id_,msg.id_,sh[math.random(#sh)])
-elseif not msg.SudoUser and Text=="هلو" then 
-return sendMsg(msg.chat_id_,msg.id_,ns[math.random(#ns)])
-elseif msg.SudoUser and Text== "احبك" then 
-return sendMsg(msg.chat_id_,msg.id_,"اموت عليك حياتي")
-elseif msg.SudoUser and Text== "تحبني" or Text=="حبك" then 
-return sendMsg(msg.chat_id_,msg.id_,"اموت عليك حياتي")
-elseif not msg.SudoUser and Text== "احبك" or Text=="حبك" then 
-return sendMsg(msg.chat_id_,msg.id_,lovm[math.random(#lovm)])
-elseif not msg.SudoUser and Text== "تحبني" then
-return sendMsg(msg.chat_id_,msg.id_,lovm[math.random(#lovm)])
 elseif Text== "بوت"then 
 return sendMsg(msg.chat_id_,msg.id_,song[math.random(#song)])
-elseif Text=="اتفل" or Text=="تفل" then
-if msg.Admin then 
-return sendMsg(msg.chat_id_,msg.id_,'ختفوووووووووو')
-else 
-return sendMsg(msg.chat_id_,msg.id_,"لا") 
-end
-elseif Text== "تف" then return sendMsg(msg.chat_id_,msg.id_,"عيب")
-elseif Text== "شلونكم" or Text== "شلونك" or Text== "شونك" or Text== "شونكم" then 
-return sendMsg(msg.chat_id_,msg.id_,"تمام و انت")
-elseif Text== "تعال خاص" or Text== "خاصك" or Text=="شوف الخاص" or Text=="شوف خاص" then return "خدوني"
-elseif Text:match(Bot_Name.." شلونك$") then 
-return sendMsg(msg.chat_id_,msg.id_,"واحشني")
 elseif Text== "مرحبا"  then return sendMsg(msg.chat_id_,msg.id_,"مراحب")
 elseif Text== "سلام" or Text== "السلام عليكم" or Text== "سلام عليكم" or Text=="سلامن عليكم" or Text=="السلامن عليكم" then 
 return sendMsg(msg.chat_id_,msg.id_,"وعليكم السلام ." )
@@ -6724,7 +6682,7 @@ return sendMsg(msg.chat_id_,msg.id_,"مدير المجموعه الهيبه")
 elseif msg.Admin then 
 return sendMsg(msg.chat_id_,msg.id_,"فقط ادمن")
 else 
-return sendMsg(msg.chat_id_,msg.id_,"تيسك")
+return sendMsg(msg.chat_id_,msg.id_,"عضو")
 end 
 end 
 
