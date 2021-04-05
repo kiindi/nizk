@@ -408,16 +408,17 @@ end
 ----------------------{ End Api Token Bot }-----------------------------
 
 function UpdateSource(msg,edit)
-if edit then EditMsg(msg.chat_id_,msg.id_,'10% - |█    @kiindi     |') end
-if edit then EditMsg(msg.chat_id_,msg.id_,'20% - |███  @kiindi       |') end
+if edit then EditMsg(msg.chat_id_,msg.id_,'20% - |█    @kiindi     |') end
+if edit then EditMsg(msg.chat_id_,msg.id_,'30% - |███  @kiindi       |') end
 download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/Run.lua','./YEMEN/Run.lua')
-if edit then EditMsg(msg.chat_id_,msg.id_,'40% - |█████  @kiindi     |') end
+if edit then EditMsg(msg.chat_id_,msg.id_,'50% - |█████  @kiindi     |') end
 download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/locks.lua','./YEMEN/locks.lua')
-if edit then EditMsg(msg.chat_id_,msg.id_,'60% - |███████  @kiindi   |') end
+if edit then EditMsg(msg.chat_id_,msg.id_,'70% - |███████  @kiindi   |') end
 download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/Script.lua','./YEMEN/Script.lua')
-if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████ @kiindi  |') end
+if edit then EditMsg(msg.chat_id_,msg.id_,'99% - |██████████ @kiindi  |') end
 download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/functions.lua','./YEMEN/functions.lua')
-if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n تم تحديث السورس الى اصدار *v'..redis:get(nk..":VERSION")..'*\n تم اعاده تشغيل السورس بنجاح\n - @TH3NK') end
+if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |██████████████|') end
+if edit then EditMsg(msg.chat_id_,msg.id_,' تم تحديث السورس الى اصدار *v'..redis:get(nk..":VERSION")..'*\n تم اعاده تشغيل السورس بنجاح\n - @TH3NK') end
 if edit then dofile("./YEMEN/Run.lua") end
 print("Update Source And Reload ~ ./YEMEN/Run.lua")
 
