@@ -418,7 +418,7 @@ download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/Script.l
 if edit then EditMsg(msg.chat_id_,msg.id_,'99% - |██████████ @kiindi  |') end
 download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/functions.lua','./YEMEN/functions.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |██████████████|') end
-if edit then EditMsg(msg.chat_id_,msg.id_,' تم تحديث السورس الى اصدار *v'..redis:get(nk..":VERSION")..'*\n تم اعاده تشغيل السورس بنجاح\n - @TH3NK') end
+if edit then EditMsg(msg.chat_id_,msg.id_,'*✶ تم تحديث السورس بنجاح* \n*✶ تم اعاده تشغيل السورس بنجاح*\n*✶ الاصدار الحالي⇜* *v'..redis:get(nk..":VERSION")..'*\n––––––––––\n *✶ CH⇥@TH3NK*') end
 if edit then dofile("./YEMEN/Run.lua") end
 print("Update Source And Reload ~ ./YEMEN/Run.lua")
 
