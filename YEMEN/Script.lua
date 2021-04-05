@@ -4333,7 +4333,7 @@ return sendMsg(msg.chat_id_,msg.id_,"📛¦ يمكنني زخرفة 24 حرف ف
 end
 local zh_Text = msg.text:match("^زخرف (.*)$")
 if zh_Text then
-local url , res = https.request('https://ali-apii.ml/api/zhrfa_nizk.php'..zh_Text:gsub(" ",'+'))
+local url , res = https.request('https://ali-apii.ml/api/zhrfa_nizk.php/'..zh_Text:gsub(" ",'+'))
 return sendMsg(msg.chat_id_,msg.id_,url)
 end
 
