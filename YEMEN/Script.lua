@@ -3582,7 +3582,7 @@ end
 
 
 if MsgText[1] == 'اصدار السورس' or MsgText[1] == 'الاصدار' then
-return '★︎ اصدار سورس النيزك*v'..version..'* \n'
+return '*★︎* (https://t.me/th3nk)[اصدار* [سورس النيزك ❪* `v'..version..'` *❫* \n'
 end
 
 if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
