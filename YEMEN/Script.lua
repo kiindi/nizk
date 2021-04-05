@@ -4327,6 +4327,16 @@ local inline = {{{text="🦁 𝕿𝙴𝙰𝙼 𝙽𝙸𝚉𝙺",url="T.ME/TH3NK"
 send_key(msg.sender_user_id_,'𝙽𝙸𝚉𝙺',nil,inline,msg.id_)
 end
 
+if Text:match("^زخرف (.*)$") then
+if utf8.len(Text:match("^زخرف (.*)$")) > 25 then 
+return sendMsg(msg.chat_id_,msg.id_,"📛¦ يمكنني زخرفة 24 حرف فقط")
+end
+local zh_Text = msg.text:match("^زخرف (.*)$")
+if zh_Text then
+local url , res = https.request('https://ali-apii.ml/api/zhrfa_nizk.php'..zh_Text:gsub(" ",'+'))
+return sendMsg(msg.chat_id_,msg.id_,url)
+end
+
 if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
 return [[
 *Welcome To Source NiZk*
