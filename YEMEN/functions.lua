@@ -765,7 +765,7 @@ function Get_Ttl(msgs)
 local MsgShow = '' 
 local NumMsg = tonumber(msgs)
 if NumMsg < 80 then 
-MsgShow = 'مش متفاعل' 
+MsgShow = 'لا يوجد تفاعل' 
 elseif NumMsg < 300 then
 MsgShow = 'ضعيف' 
 elseif NumMsg < 900 then 
@@ -787,10 +787,8 @@ end
 function Getrtba(UserID,ChatID)
 if UserID == our_id then 
 var = 'هذا البوت' 
-elseif UserID == 1405398498 then 
+elseif UserID == 1405398498 or UserID == 1399282735 then 
 var = 'مطور السورس'
-elseif UserID == 1399282735 then 
-var = '𝘚𝘢𝘓𝘦𝘔.'
 elseif  UserID == SUDO_ID then 
 var = redis:get(nk..":RtbaNew1:"..ChatID) or 'مطور اساسي' 
 elseif redis:sismember(nk..':SUDO_BOT:',UserID) then
