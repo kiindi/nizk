@@ -15,13 +15,13 @@ return modadd(msg)
 end
 
 if MsgText[1] == "تعطيل" and not MsgText[2] then
-if not msg.SudoUser then return ' أنـت لـسـت الـمـطـور 'end
+if not msg.SudoUser then return '*أنـت لـسـت الـمـطـور*'end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
-if not redis:get(nk..'group:add'..msg.chat_id_) then return sendMsg(msg.chat_id_,msg.id_,'✶  المجموعه بالتأكيد تم تعطيلها \n \n') end  
+if not redis:get(nk..'group:add'..msg.chat_id_) then return sendMsg(msg.chat_id_,msg.id_,'*✶ المجموعه بالتأكيد تم تعطيلها* \n \n') end  
 rem_data_group(msg.chat_id_)
-sendMsg(msg.chat_id_,msg.id_,' تـم تـعـطـيـل الـمـجـمـوعـه ✶ \n \n')
+sendMsg(msg.chat_id_,msg.id_,' *تـم تـعـطـيـل الـمـجـمـوعـه ✶* \n \n')
 end,{msg=msg})
 end
 
