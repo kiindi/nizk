@@ -4338,7 +4338,7 @@ return [[
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
 *📬┇* [Source Channel](https://t.me/TH3NK)
     
-*📊┇* [Source Install](https://t.me/TH3NK/171)
+*📊┇* [Source Install](https://t.me/TH3NK/196)
     
 *🆔┇* [Changing ID Channel](https://t.me/Nizk_id/1)
     
