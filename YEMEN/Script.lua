@@ -4097,7 +4097,7 @@ sendMsg(msg.chat_id_,msg.id_,textD)
 end,{msg=msg})
 return false
 end
-if MsgText[1] and MsgText[1]:match("منو ضافني") then
+if MsgText[1] == "منو ضافني" then
 if not redis:get(nk..":Added:Me:"..msg.chat_id_) then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da and da.status_.ID == "ChatMemberStatusCreator" then
