@@ -2602,7 +2602,16 @@ sendMsg(arg.chat_id_,arg.id_,Get_info)
 end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 return false
 end
-
+if msg.Director then
+if MsgText[1] == 'تفعيل ضافني' then 
+redis:del(nk..":Added:Me:"..msg.chat_id_)  
+sendMsg(msg.chat_id_,msg.id_,'*✶ تم تفعيل امر منو ضافني*')
+end
+if MsgText[1] == 'تعطيل ضافني' then  
+redis:set(nk..":Added:Me:"..msg.chat_id_,true)    
+sendMsg(msg.chat_id_,msg.id_,'*✶ تم تعطيل امر منو ضافني*')
+end
+end
 if MsgText[1] == "تفعيل الردود العشوائيه" 	then return unlock_replayRn(msg) end
 if MsgText[1] == "تفعيل الردود" 	then return unlock_replay(msg) end
 if MsgText[1] == "تفعيل الايدي" 	then return unlock_ID(msg) end
@@ -4088,7 +4097,27 @@ sendMsg(msg.chat_id_,msg.id_,textD)
 end,{msg=msg})
 return false
 end
-
+if MsgText[1] and MsgText[1]:match("(.*)(ضافني)(.*)") then
+if not redis:get(nk..":Added:Me:"..msg.chat_id_) then
+tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
+if da and da.status_.ID == "ChatMemberStatusCreator" then
+sendMsg(msg.chat_id_,msg.id_,'*✶ انت منشئ المجموعه*') 
+end
+local Added_Me = redis:get(nk..":Added:Me:Who:Added:Me"..msg.chat_id_..':'..msg.sender_user_id_)
+if Added_Me then 
+tdcli_function ({ID = "GetUser",user_id_ = Added_Me},function(extra,result,success)
+local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
+Text = '*⌔︙الشخص الذي قام باضافتك هو »*'..Name
+sendMsg(msg.chat_id_,msg.id_,Text) 
+end,nil)
+else
+sendMsg(msg.chat_id_,msg.id_,'*⌔︙انت دخلت عبر الرابط*') 
+end
+end,nil)
+else
+sendMsg(msg.chat_id_,msg.id_,'*⌔︙امر منو ضافني تم تعطيله من قبل المدراء*') 
+end
+end
 if MsgText[1]== 'م3' then
 if not msg.Admin then return "هذا الامر ليس لك عزيزي .  \n" end
 SUDO_USER = redis:hgetall(nk..'username:'..SUDO_ID).username
@@ -5588,6 +5617,7 @@ end,{chat_id_=msg.chat_id_,id_=msg.id_,title_=msg.content_.title_})
 end
 
 if msg.content_.ID == "MessageChatAddMembers" and redis:get(nk..'welcome:get'..msg.chat_id_) then
+redis:set(nk..":Added:Me:Who:Added:Me"..msg.chat_id_..':'..msg.content_.members_[0].id_,msg.sender_user_id_)
 local adduserx = tonumber(redis:get(nk..'user:'..msg.sender_user_id_..':msgs') or 0)
 if adduserx > 3 then 
 redis:del(nk..'welcome:get'..msg.chat_id_)
@@ -5596,6 +5626,7 @@ redis:setex(nk..'user:'..msg.sender_user_id_..':msgs',3,adduserx+1)
 end
 
 if (msg.content_.ID == "MessageChatAddMembers") then
+redis:set(nk..":Added:Me:Who:Added:Me"..msg.chat_id_..':'..msg.content_.members_[0].id_,msg.sender_user_id_)
 if redis:get(nk..'welcome:get'..msg.chat_id_) then
 if msg.adduserType then
 welcome = (redis:get(nk..'welcome:msg'..msg.chat_id_) or "✶ مرحباً عزيزي\n✶ نورت المجموعة \n")
@@ -7229,6 +7260,10 @@ Nk = {
 "^(قفل الوسائط)$",
 "^(فتح الوسائط)$",
 "^(منع)$",
+"^(تفعيل ضافني)$",
+"^(تعطيل ضافني)$",
+"^(ضافني)$",
+
 },
 iNk = iNk,
 dNk = dNk,
