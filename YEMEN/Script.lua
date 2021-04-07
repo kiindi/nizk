@@ -2602,14 +2602,14 @@ sendMsg(arg.chat_id_,arg.id_,Get_info)
 end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 return false
 end
---if msg.Director then
---if MsgText[1] == 'تفعيل ضافني' then 
---redis:del(nk..":Added:Me:"..msg.chat_id_)  
---sendMsg(msg.chat_id_,msg.id_,'*✶ تم تفعيل امر منو ضافني*')
---end
+if msg.Director then
+if MsgText[1] == 'تفعيل ضافني' then 
+redis:del(nk..":Added:Me:"..msg.chat_id_)  
+sendMsg(msg.chat_id_,msg.id_,'✶تم تفعيل امر منو ضافني')
+end
 if MsgText[1] == 'تعطيل ضافني' then  
 redis:set(nk..":Added:Me:"..msg.chat_id_,true)    
-sendMsg(msg.chat_id_,msg.id_,'*✶ تم تعطيل امر منو ضافني*')
+sendMsg(msg.chat_id_,msg.id_,'✶تم تعطيل امر منو ضافني')
 end
 end
 if MsgText[1] == "تفعيل الردود العشوائيه" 	then return unlock_replayRn(msg) end
@@ -4097,25 +4097,26 @@ sendMsg(msg.chat_id_,msg.id_,textD)
 end,{msg=msg})
 return false
 end
-if MsgText[1] == "منو ضافني" then
+if MsgText[1]== 'منو ضافني' then
 if not redis:get(nk..":Added:Me:"..msg.chat_id_) then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da and da.status_.ID == "ChatMemberStatusCreator" then
-sendMsg(msg.chat_id_,msg.id_,'*✶ انت منشئ المجموعه*') 
+sendMsg(msg.chat_id_,msg.id_,'*✶انت منشئ المجموعه *') 
+return false
 end
 local Added_Me = redis:get(nk..":Added:Me:Who:Added:Me"..msg.chat_id_..':'..msg.sender_user_id_)
 if Added_Me then 
 tdcli_function ({ID = "GetUser",user_id_ = Added_Me},function(extra,result,success)
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
-Text = '*⌔︙الشخص الذي قام باضافتك هو »*'..Name
+Text = '*✶الشخص الذي قام باضافتك هو * '..Name
 sendMsg(msg.chat_id_,msg.id_,Text) 
 end,nil)
 else
-sendMsg(msg.chat_id_,msg.id_,'*⌔︙انت دخلت عبر الرابط*') 
+sendMsg(msg.chat_id_,msg.id_,'*✶انت دخلت عبر الرابط*') 
 end
 end,nil)
 else
-sendMsg(msg.chat_id_,msg.id_,'*⌔︙امر منو ضافني تم تعطيله من قبل المدراء*') 
+sendMsg(msg.chat_id_,msg.id_,'*✶امر منو ضافني تم تعطيله من قبل المدراء *') 
 end
 end
 if MsgText[1]== 'م3' then
@@ -7262,7 +7263,7 @@ Nk = {
 "^(منع)$",
 "^(تفعيل ضافني)$",
 "^(تعطيل ضافني)$",
-"^(ضافني)$",
+"^(منو ضافني)$",
 
 },
 iNk = iNk,
