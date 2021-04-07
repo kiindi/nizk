@@ -787,7 +787,7 @@ end
 function Getrtba(UserID,ChatID)
 if UserID == our_id then 
 var = 'هذا البوت' 
-elseif UserID == 1405398498 or UserID == 1399282735 then 
+elseif UserID == 1405398498 then 
 var = 'مطور السورس'
 elseif UserID == 1399282735 then 
 var = 'مُـحمد سَـالِـم'
