@@ -275,7 +275,7 @@ msg.Rank = 1
 elseif msg.sender_user_id_ == 665877797 then
 msg.TheRankCmd = 'مُـؤيـد'
 msg.TheRank = 'مُـؤيـد'
-msg.Rank = 1
+msg.Rank = 6
 elseif msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = redis:get(nk..":RtbaNew1:"..msg.chat_id_) or 'المطور الاساسي' 
 msg.TheRank = redis:get(nk..":RtbaNew1:"..msg.chat_id_) or 'مطور اساسي' 
@@ -607,19 +607,19 @@ print("MessageEntityCode")
 end
 end
 msg.text = msg.content_.text_
-if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735 or msg.sender_user_id_ == 665877797) then
+if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735) then
 return sendMsg(msg.chat_id_,msg.id_,".تم تحديث الملفات",function(arg,data)
 Refresh_Start = true
 end)
 end 
-if msg.text == 'Update Source' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735 or msg.sender_user_id_ == 665877797) then
+if msg.text == 'Update Source' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735) then
 UpdateSource(msg)
 sendMsg(msg.chat_id_,msg.id_,'| {* تــم تحديث وتثبيت السورس  *} .\n\n| { Bot is Update » }',function(arg,data)
 dofile("./YEMEN/Run.lua")
 print("Reload ~ ./YEMEN/Run.lua")
 end) 
 end
-if (msg.text == 'reload' or msg.text == "أعادة التشغيل ") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735 or msg.sender_user_id_ == 665877797) then
+if (msg.text == 'reload' or msg.text == "أعادة التشغيل ") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1405398498 or msg.sender_user_id_ == 1399282735) then
 sendMsg(msg.chat_id_,msg.id_,'| {* تــم أعـاده تشغيل البوت  *} .\n\n| { Bot is Reloaded » }',function(arg,data)
 dofile("./YEMEN/Run.lua")
 print("Reload ~ ./YEMEN/Run.lua")
