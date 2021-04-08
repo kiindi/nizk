@@ -1516,7 +1516,7 @@ end
 end
 end
 if NumAdmin == 0 then 
-return sendMsg(arg.chat_id_,arg.id_,"✶ لا يـوجـد أدمـنـيـه لكي يتـم رفعهم \n")
+return sendMsg(arg.chat_id_,arg.id_,"*✶ لا يـوجـد أدمـنـيـه لكي يتـم رفعهم*\n")
 else
 return sendMsg(arg.chat_id_,arg.id_,"✶ تم رفع  { *"..NumAdmin.."* } مـن آلآدمـنيهہ‌‏ في آلبوت \n")
 end
@@ -1532,7 +1532,7 @@ lock_servicez = true
 else
 lock_servicez = false
 end
-if not msg.SudoUser and not lock_servicez then return '✶ أنـت لـسـت الـمـطـور ' end
+if not msg.SudoUser and not lock_servicez then return '*✶ أنـت لـسـت الـمـطـور*' end
 if msg.is_post_ then return "✶ عذرا هذا بوت حمايه للمجموعات وليس للقنوات  " end
 if msg.type ~= "channel" then return '✶ البوت يعمل فقط في المجموعات العامه لذا يجب ترقية المجموعه ووضع معرف للمجموعه لتصبح عامه او جعلها مشاهدة للجميع ' end
 
@@ -1573,9 +1573,9 @@ if data.channel_ and data.channel_.status_.ID  == "ChatMemberStatusMember" then
 return sendMsg(arg.chat_id_,arg.id_,'✶ عذرا البوت ليس ادمن  في المجموعه \n- يرجى رفعه ادمن لتتمكن من تفعيل البوت ')
 end
 if arg.lock_servicez then 
-sendMsg(arg.chat_id_,arg.id_,'تـم تـفعـيل المـجمـوعه\n [نيزك](https://t.me/TH3NK) \n ')
+sendMsg(arg.chat_id_,arg.id_,'*تـم تـفعـيل المـجمـوعه*\n [سُـورس النَـزيكـ](https://t.me/TH3NK) \n ')
 else
-sendMsg(arg.chat_id_,arg.id_,'تـم تفـعيل المجـموعه\n [نيزك](https://t.me/TH3NK) \n ')
+sendMsg(arg.chat_id_,arg.id_,'*تم تفـعيل المجـموعه* \n [سُـورس النَـزيكـ](https://t.me/TH3NK) \n ')
 end
 
 GetChannelAdministrators(arg.chat_id_,function(arg,data)
@@ -1691,7 +1691,7 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك طرد البوت\n") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك طرد المطور الاساسي\n") 
-elseif UserID == 1405398498 or UserID == 1399282735 or UserID == 665877797 then 
+elseif UserID == 1405398498 or UserID == 1399282735 then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك طرد مطور السورس\n") 
 elseif redis:sismember(nk..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك طرد المطور\n") 
@@ -1924,7 +1924,7 @@ end
 if cmd == "ban" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك حظر البوت\n") 
-elseif UserID == 1405398498 or UserID == 1399282735 or UserID == 665877797 then 
+elseif UserID == 1405398498 or UserID == 1399282735 then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك حظر مطور السورس\n") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك حظر المطور الاساسي\n") 
@@ -1953,7 +1953,7 @@ end
 if cmd == "kick" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك طرد البوت\n") 
-elseif UserID == 1405398498 or UserID == 1399282735 or UserID == 665877797 then 
+elseif UserID == 1405398498 or UserID == 1399282735 then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك طرد مطور السورس\n") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك طرد المطور الاساسي\n") 
@@ -1996,7 +1996,7 @@ end
 if cmd == "ktm" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك كتم البوت\n") 
-elseif UserID == 1405398498 or UserID == 1399282735 or UserID == 665877797 then 
+elseif UserID == 1405398498 or UserID == 1399282735 then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك كتم مطور السورس\n") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك كتم المطور الاساسي\n") 
@@ -2055,7 +2055,7 @@ end
 if cmd == "bandall" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك حظر البوت\n") 
-elseif UserID == 1405398498 or UserID == 1399282735 or UserID == 665877797 then 
+elseif UserID == 1405398498 or UserID == 1399282735 then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك حظر مطور السورس\n") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✶ لا يمكنك حظر المطور الاساسي\n")
@@ -2102,7 +2102,7 @@ end
 if cmd == "DwnAll" then ----------- تنزيل الكل
 print(UserID..":"..SUDO_ID)
 if UserID == our_id then return sendMsg(ChatID,MsgID,"✶ لآ يمكنك تنفيذ الامر مع البوت\n") end
-if UserID == 1405398498 or UserID == 1399282735 or UserID == 665877797 then return sendMsg(ChatID,MsgID,"✶ لآ يمكنك تنفيذ الامر ضد مطور السورس \n") end
+if UserID == 1405398498 or UserID == 1399282735 then return sendMsg(ChatID,MsgID,"✶ لآ يمكنك تنفيذ الامر ضد مطور السورس \n") end
 
 if UserID == SUDO_ID then 
 rinkuser = 1
