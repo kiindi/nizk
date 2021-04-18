@@ -79,7 +79,7 @@ end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 
 end
 end
-
+end
 if text == "تعطيل معاني الاسماء" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '⋆ ⇽ تم تعطيل معاني الاسماء')
 database:set(bot_id.."MASONIC:Name_Bots"..msg.chat_id_,"close")
