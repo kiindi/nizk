@@ -4251,25 +4251,13 @@ local inline = {{{text="🦁 𝕿𝙴𝙰𝙼 𝙽𝙸𝚉𝙺",url="T.ME/TH3NK"
 send_key(msg.sender_user_id_,'𝙽𝙸𝚉𝙺',nil,inline,msg.id_)
 end
 
-if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
-return [[
-*Welcome To Source NiZk*
-  
-*🦁┇𝕿𝙴𝙰𝙼 𝙽𝙸𝚉𝙺*
-*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
-*📂┇* [Source File](https://t.me/TH1BS)
 
-*📬┇* [Source Channel](https://t.me/TH3NK)
-  
-*📊┇* [Source group](https://t.me/joinchat/UHU_aKyF7b6iyzfa)
-  
-*🆔┇* [Changing ID Channel](https://t.me/Nizk_id/1)
-  
-*📋┇* [Telegram](https://t.me/teelagram)
-*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
-*📮┇* [Source admin](https://t.me/kiindi)
-]]
-end
+
+
+
+
+
+
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
 if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
@@ -5246,6 +5234,62 @@ return sendMsg(msg.chat_id_,msg.id_,"✶  تم وضع الوصف بنجاح\n")
 end 
 end,nil)
 end
+
+
+
+
+
+
+if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
+local text = "
+*Welcome To Source NiZk*
+  
+*🦁┇𝕿𝙴𝙰𝙼 𝙽𝙸𝚉𝙺*
+*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
+*📂┇* [Source File](https://t.me/TH1BS)
+
+*📬┇* [Source Channel](https://t.me/TH3NK)
+  
+*📊┇* [Source group](https://t.me/joinchat/UHU_aKyF7b6iyzfa)
+  
+*🆔┇* [Changing ID Channel](https://t.me/Nizk_id/1)
+  
+*📋┇* [Telegram](https://t.me/teelagram)
+*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
+*📮┇* [Source admin](https://t.me/kiindi)
+▁"
+local inline = {
+{{text = '- SOURCE DEV .',url="https://t.me/kiindi"}},
+{{text = '- ᴘ. ɴɪᴢᴋ ᴛᴇᴀᴍ 💥 .',url="https://t.me/TH1BS"}},
+}   
+return send_inline(msg.chat_id_,text,inline,msg.id_)
+end
+
+
+if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
+return [[
+*Welcome To Source NiZk*
+  
+*🦁┇𝕿𝙴𝙰𝙼 𝙽𝙸𝚉𝙺*
+*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
+*📂┇* [Source File](https://t.me/TH1BS)
+
+*📬┇* [Source Channel](https://t.me/TH3NK)
+  
+*📊┇* [Source group](https://t.me/joinchat/UHU_aKyF7b6iyzfa)
+  
+*🆔┇* [Changing ID Channel](https://t.me/Nizk_id/1)
+  
+*📋┇* [Telegram](https://t.me/teelagram)
+*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
+*📮┇* [Source admin](https://t.me/kiindi)
+]]
+end
+
+
+
+
+
 
 
 if redis:get(nk..'fwd:all'..msg.sender_user_id_) then ---- استقبال رساله الاذاعه عام
