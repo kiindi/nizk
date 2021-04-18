@@ -4276,7 +4276,7 @@ if text and text:match("^تحميل (.*)$") then
                 local url = text:match("^تحميل (.*)$")
                 local getMe = https.request('https://api.telegram.org/bot' .. token .. '/getMe')
                 local get_me_json = JSON.decode(getMe)
-                Get = https.request("https://planther-ash.com/API/api.php?vid=" .. url .. "&type=mp3")
+                Get = https.request("https://alsh-bg.ml/api/YouTube_Free.php?vid=" .. url .. "&type=mp3")
                 local Json_Info = JSON.decode(Get)
                 if (Json_Info.url) then
                     local download = download_to_file(Json_Info.url, msg.chat_id_ .. Json_Info.vid .. '.mp3')
