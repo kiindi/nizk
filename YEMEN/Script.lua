@@ -80,6 +80,25 @@ end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 end
 end
 
+if text == "تعطيل معاني الاسماء" and Manager(msg) then
+send(msg.chat_id_, msg.id_, '⋆ ⇽ تم تعطيل معاني الاسماء')
+database:set(bot_id.."MASONIC:Name_Bots"..msg.chat_id_,"close")
+end
+if text == "تفعيل معاني الاسماء" and Manager(msg) then
+send(msg.chat_id_, msg.id_,'⋆ ⇽ تم تفعيل معاني الاسماء')
+database:set(bot_id.."MASONIC:Name_Bots"..msg.chat_id_,"open")
+end
+if text and text:match("^معني (.*)$") and database:get(bot_id.."MASONIC:Name_Bots"..msg.chat_id_) == "open" then
+local TextName = text:match("^معني (.*)$")
+gk = https.request('http://sonicx.ml/Api/Name.php?Name='..URL.escape(TextName)..'')
+br = JSON.decode(gk)
+send(msg.chat_id_, msg.id_,br.meaning)
+end
+
+
+
+
+
 if msg.reply_id and not MsgText[2] then
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
 if not data.sender_user_id_ then return sendMsg(arg.ChatID,arg.MsgID,"✶ عذرا هذا العضو ليس موجود ضمن المجموعات \n") end
