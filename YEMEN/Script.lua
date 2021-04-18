@@ -5265,7 +5265,7 @@ local inline = {
 return send_inline(msg.chat_id_,text,inline,msg.id_)
 end
 
-
+end
 if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
 return [[
 *Welcome To Source NiZk*
