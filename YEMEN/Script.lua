@@ -4267,27 +4267,11 @@ return [[
   
 *📋┇* [Telegram](https://t.me/teelagram)
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
-*📮┇* [Source admin](https://t.me/kiindi)
-➖
+*📮┇* [Source admin](https://t.me/kiindi)\n➖
+
 ]]
 end
 
-if text and text:match("^تحميل (.*)$") then
-                send(msg.chat_id_, msg.id_, '⌑︙ جاري ')
-                local url = text:match("^تحميل (.*)$")
-                local getMe = https.request('https://api.telegram.org/bot' .. token .. '/getMe')
-                local get_me_json = JSON.decode(getMe)
-                Get = https.request("https://alsh-bg.ml/api/YouTube_Free.php?vid=" .. url .. "&type=mp3")
-                local Json_Info = JSON.decode(Get)
-                if (Json_Info.url) then
-                    local download = download_to_file(Json_Info.url, msg.chat_id_ .. Json_Info.vid .. '.mp3')
-                    sendAudio(msg.chat_id_, msg.id_, './' .. msg.chat_id_ .. Json_Info.vid .. '.mp3', Json_Info.title,
-                        '- BY : @' .. get_me_json.result.username .. ' ' .. Json_Info.MB .. ' .')
-                    os.execute('rm -rf ./' .. msg.chat_id_ .. Json_Info.vid .. '.mp3')
-                else
-                    send(msg.chat_id_, msg.id_, "⌑︙حدث خطأ لايمكن التحميل ")
-                end
-            end
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
 if not msg.SudoBase then return "⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
