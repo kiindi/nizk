@@ -4267,7 +4267,7 @@ return [[
   
 *📋┇* [Telegram](https://t.me/teelagram)
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
-*📮┇* [Source admin](https://t.me/kiindi)\n➖
+*📮┇* [Source admin](https://t.me/kiindi)
 
 ]]
 end
