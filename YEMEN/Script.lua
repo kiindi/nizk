@@ -42,13 +42,13 @@ else
 
 GetPhotoUser(data.id_,function(arg,data)
 local edited = (redis:get(nk..':edited:'..arg.chat_id_..':'..arg.sender_user_id_) or 0)
-
-local KleshaID = '👤¦ أســمـك •⊱ '..arg.Namei..' ⊰•\n'
-..'🎟¦ ايديــك •⊱ '..arg.sender_user_id_..' ⊰•\n'
+local KleshaID = '⌯⁞ أســمـك ⋙ '..arg.Namei..' •\n'
+..'⌯⁞ ايديــك ⋙ '..arg.sender_user_id_..' •\n'
 ..arg.UserNameID
-..'📡¦ رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'
-..'💬¦ رسائلك •⊱ '..arg.msgs..' ⊰•\n➖'
-local Kleshaidinfo = redis:get(nk..":infoiduser_public:"..arg.chat_id_) or redis:get(nk..":infoiduser")  
+..'⌯⁞ رتبتـــك ⋙ '..arg.TheRank..' •\n'
+..'⌯⁞ رسائلك ⋙ '..arg.msgs..' •\n➖'
+local Kleshaidinfo = redis:get(nk..":infoiduser_public:"..arg.chat_id_) or redis:get(nk..":infoiduser")
+
 
 if Kleshaidinfo then 
 local points = redis:get(nk..':User_Points:'..arg.chat_id_..arg.sender_user_id_) or 0
