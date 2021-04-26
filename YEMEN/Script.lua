@@ -2303,8 +2303,8 @@ AllBots = AllBots..NumBot..'- @['..data.username_..'] '..BotAdmin..'\n'
 if NumBot == total then
 AllBots = AllBots..[[
 ا────────────
-✶⁞ لـديـک {]]..total..[[} بـوتـآت
-✶⁞ ملاحظة : الـ ★ تعنـي ان البوت مشرف في المجموعـة.]]
+⌯⁞ لـديـک {]]..total..[[} بـوتـآت
+⌯⁞ ملاحظة : الـ ★ تعنـي ان البوت مشرف في المجموعـة.]]
 sendMsg(arg.ChatID,arg.MsgID,AllBots) 
 end
 end,{ChatID=arg.ChatID,MsgID=arg.MsgID})
@@ -2613,7 +2613,7 @@ if MsgText[1] == "تعطيل تعيين الايدي" or MsgText[1] =="تعطي�
 if MsgText[1] == "تفعيل الاذاعه" or MsgText[1] =="تفعيل الاذاعه " 	then return unlock_brod(msg) end
 
 if MsgText[1] == 'مسح المطورين'  then
-if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local mtwren = redis:scard(nk..':SUDO_BOT:')
 if mtwren == 0 then  return "✶⁞  عذرا لا يوجد مطورين في البوت  ✖️" end
 redis:del(nk..':SUDO_BOT:') 
@@ -2621,7 +2621,7 @@ return "✶⁞  تم مسح {* "..mtwren.." *} من المطورين \n"
 end
 
 if MsgText[1] == 'مسح قائمه العام'  then
-if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local addbannds = redis:scard(nk..'gban_users')
 if addbannds ==0 then 
 return "قائمة الحظر فارغه ." 
@@ -3334,17 +3334,17 @@ return GetListGeneralBanned(msg)
 end
 
 if MsgText[1] == "تعطيل التواصل" or MsgText[1]=="تعطيل التواصل ✖️" then 
-if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return lock_twasel(msg) 
 end
 
 if MsgText[1] == "تفعيل التواصل" or MsgText[1]=="تفعيل التواصل " then 
-if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return unlock_twasel(msg) 
 end
 
 if MsgText[1] == "حظر عام" then
-if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 if not MsgText[2] and msg.reply_id then 
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
 if not data.sender_user_id_ then return sendMsg(arg.ChatID,arg.MsgID,"✶⁞  عذرا هذا العضو ليس موجود ضمن المجموعات \n") end
@@ -3405,7 +3405,7 @@ return false
 end
 
 if MsgText[1] == "الغاء العام" or MsgText[1] == "الغاء عام" then
-if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 
 if not MsgText[2] and msg.reply_id then 
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
@@ -3489,16 +3489,16 @@ return '✶⁞  تم آلغآء آلآمـر بنجآح \n'
 end  
 
 if (MsgText[1] == '/files' or MsgText[1]== "الملفات 🗂" or MsgText[1]== "الملفات" ) then
-if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return All_File()
 end   
 
 if MsgText[1] == 'اصدار السورس' or MsgText[1] == 'الاصدار' then
-return '*✶⁞ اصدار سورس النيزك ❪* `v'..version..'` *❫* \n - [ᴘ. ɴɪᴢᴋ ᴛᴇᴀᴍ](t.me/TH3NK)'
+return '*⌯⁞ اصدار سورس النيزك ❪* `v'..version..'` *❫* \n - [ᴛᴇᴀᴍ ɴɪᴢᴋ](t.me/TH3NK)'
 end
 
 if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
-if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local GetVerison = https.request('https://raw.githubusercontent.com/kiindi/kiindi.github.io/root/GetVersion.txt') or "0"
 GetVerison = GetVerison:gsub("\n",""):gsub(" ","")
 if GetVerison > version then
@@ -3507,18 +3507,18 @@ sendMsg(msg.chat_id_,msg.id_,'✶⁞  يوجد تحديث جديد الان \n�
 redis:set(nk..":VERSION",GetVerison)
 return false
 else
-return "✶⁞ الاصدار الحالي : *v"..version.."* \n✶⁞  لديـك احدث اصدار\n - [ᴘ. ɴɪᴢᴋ ᴛᴇᴀᴍ](t.me/TH3NK)"
+return "⌯⁞ الاصدار الحالي : *v"..version.."* \n⌯⁞  لديـك احدث اصدار\n - [ᴛᴇᴀᴍ ɴɪᴢᴋ](t.me/TH3NK)"
 end
 return false
 end
 
 if MsgText[1] == 'نسخه احتياطيه للمجموعات' then
-if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return buck_up_groups(msg)
 end 
 
 if MsgText[1] == 'رفع نسخه الاحتياطيه' then
-if not msg.SudoBase then return "👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return "⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 if msg.reply_id then
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg, data)
 if data.content_.ID == 'MessageDocument' then
@@ -3558,7 +3558,7 @@ return false
 end
 
 if (MsgText[1]=="تيست" or MsgText[1]=="test") then 
-if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
+if not msg.SudoBase then return"⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 return " البوت شـغــال" 
 end
 
@@ -3571,8 +3571,8 @@ return false
 end
 
 if (MsgText[1]== "الاحصائيات " or MsgText[1]=="الاحصائيات") then
-if not msg.SudoBase then return"👨🏻‍💻 ¦  هذا الامر يخص {المطور الاساسي} فقط  \n" end
-return 'الاحصائيات :  \n\n عدد المجموعات المفعله : '..redis:scard(nk..'group:ids')..'\n✶⁞  عدد المشتركين في البوت : '..redis:scard(nk..'users')..'\n'
+if not msg.SudoBase then return"⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
+return 'الاحصائيات :  \n\n عدد المجموعات المفعله : '..redis:scard(nk..'group:ids')..'\n⌯⁞  عدد المشتركين في البوت : '..redis:scard(nk..'users')..'\n'
 end
 ---------------[End Function data] -----------------------
 if MsgText[1]=="اضف رد عام" or MsgText[1]=="اضف رد عام ➕" then
@@ -4259,20 +4259,25 @@ return [[
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
 *📂┇* [Source File](https://t.me/TH1BS)
 
+
 *📬┇* [Source Channel](https://t.me/TH3NK)
+
   
 *📊┇* [Source group](https://t.me/joinchat/UHU_aKyF7b6iyzfa)
+
   
 *🆔┇* [Changing ID Channel](https://t.me/Nizk_id/1)
+
   
 *📋┇* [Telegram](https://t.me/teelagram)
+
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
 *📮┇* [Source admin](https://t.me/kiindi)
 
 ]]
 end
 
-
+ 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
 if not msg.SudoBase then return "⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local Get_Files, res = https.request("https://kiindi.github.io/GetFiles.json")
@@ -4468,6 +4473,8 @@ end,nil)
 return false
 end
 end
+
+
 if msg.SudoBase then
 if msg.reply_id then
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
