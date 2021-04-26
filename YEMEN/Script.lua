@@ -32,7 +32,7 @@ if redis:get(nk..'lock_id'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 
 local msgs = redis:get(nk..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 1
-if data.username_ then UserNameID = "⌯⁞ مـعرفك • @"..data.username_.." ⊰•\n" else UserNameID = "" end
+if data.username_ then UserNameID = "⌯⁞ مـعرفك ⋙ @"..data.username_.." •\n" else UserNameID = "" end
 if data.username_ then UserNameID1 = "@"..data.username_ else UserNameID1 = "لا يوجد" end
 if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ else Name = data.first_name_ end
 local Namei = FlterName(data,20)
