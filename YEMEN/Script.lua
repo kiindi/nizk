@@ -4259,46 +4259,19 @@ return [[
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
 *📂┇* [Source File](https://t.me/TH1BS)
 
-
 *📬┇* [Source Channel](https://t.me/TH3NK)
-
   
 *📊┇* [Source group](https://t.me/joinchat/UHU_aKyF7b6iyzfa)
-
   
 *🆔┇* [Changing ID Channel](https://t.me/Nizk_id/1)
-
   
 *📋┇* [Telegram](https://t.me/teelagram)
-
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
 *📮┇* [Source admin](https://t.me/kiindi)
-
 ]]
-GetUserID(msg.sender_user_id_,function(arg,data)
-if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ else Name = data.first_name_ end
-text = redis:get(nizk..':Text_Start') or text
-local edited = (redis:get(nizk..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local points = redis:get(nizk..':User_Points:'..msg.chat_id_..msg.sender_user_id_) or 0
-local Emsgs = redis:get(nizk..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 1
-if data.username_ then UserNameID = "@"..data.username_ else UserNameID = "لا يوجد" end  
-text = text:gsub("{الاسم}",Name)
-text = text:gsub("{الايدي}",msg.sender_user_id_)
-text = text:gsub("{المعرف}",UserNameID)
-text = text:gsub("{الرتبه}",msg.TheRank)
-text = text:gsub("{البوت}",redis:get(nizk..':NameBot:'))
-text = text:gsub("{المطور}",SUDO_USER)
-xsudouser = SUDO_USER:gsub('@','')
-xsudouser = xsudouser:gsub([[\_]],'_')
-local inline = {{{text="آلمـطـور ™",url="t.me/"..xsudouser}}}
-send_key(msg.sender_user_id_,Flter_Markdown(text),nil,inline,msg.id_)
-end,nil)
-return false
-end
 end
 
 
- 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
 if not msg.SudoBase then return "⌯⁞ هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local Get_Files, res = https.request("https://kiindi.github.io/GetFiles.json")
