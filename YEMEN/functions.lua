@@ -791,8 +791,6 @@ elseif UserID == 1405398498 then
 var = 'مطور السورس'
 elseif UserID == 1399282735 then 
 var = 'مُـحمد سَـالِـم'
-elseif UserID == 665877797 then
-var = 'مُـؤيـد'
 elseif  UserID == SUDO_ID then 
 var = redis:get(nk..":RtbaNew1:"..ChatID) or 'مطور اساسي' 
 elseif redis:sismember(nk..':SUDO_BOT:',UserID) then
