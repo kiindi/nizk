@@ -294,10 +294,6 @@ elseif msg.sender_user_id_ == 1399282735 then
 msg.TheRankCmd = 'مُـحمد سَـالِـم'
 msg.TheRank = 'مُـحمد سَـالِـم'
 msg.Rank = 1
-elseif msg.sender_user_id_ == 665877797 then
-msg.TheRankCmd = 'مُـؤيـد'
-msg.TheRank = 'مُـؤيـد'
-msg.Rank = 6
 elseif msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = redis:get(nk..":RtbaNew1:"..msg.chat_id_) or 'المطور الاساسي' 
 msg.TheRank = redis:get(nk..":RtbaNew1:"..msg.chat_id_) or 'مطور اساسي' 
