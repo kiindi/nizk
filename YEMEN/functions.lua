@@ -1006,13 +1006,13 @@ end
 function UpdateSource(msg,edit)
 if edit then EditMsg(msg.chat_id_,msg.id_,'10% - |█    @kindi3     |') end
 if edit then EditMsg(msg.chat_id_,msg.id_,'20% - |███  @kindi3       |') end
-
+download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/Run.lua','./inc/Run.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'40% - |█████  @kindi3     |') end
-
+download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/locks.lua','./inc/locks.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'60% - |███████  @kindi3   |') end
-
+download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/Script.lua','./inc/Script.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████ @kindi3  |') end
-
+download_file('https://raw.githubusercontent.com/kiindi/nizk/root/YEMEN/functions.lua','./inc/functions.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n تم تحديث السورس الى اصدار *v'..redis:get(js..":VERSION")..'*\n تم اعاده تشغيل السورس بنجاح\n Ch : *@TH3NK*') end
 if edit then dofile("./YEMEN/Run.lua") end
 print("Update Source And Reload ~ ./YEMEN/Run.lua")
