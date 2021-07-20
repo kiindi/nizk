@@ -4314,7 +4314,7 @@ end
 
 
 
-if MsgText[1] == "اعدادات المجموعة" or MsgText[1] == "اعدادات المجموعه" or MsgText[1] == '/set' or MsgText[1] == '/set@hma8bot' then
+if MsgText[1] == "اعدادات المجموعة" or MsgText[1] == "اعدادات المجموعه" or MsgText[1] == '/set' then
 if not msg.Admin then return "✶⁞ هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
 msg.textmsg = "- اهلا بك في لستة الاوامر  اختر القسم للتحكم بالاوامر ."
 msg.KeyboardCmd = keyboardSitting
@@ -8084,7 +8084,6 @@ Js = {
 "^(فتح الفارسيه)$",
 "^(البايو)$",
 "^(/set)$",
-"^(/set@hma8bot)$",
 "^(فتح الفشار)$",
 "^(تعطيل الردود)$",
 "^(تعطيل الاذاعه)$",
