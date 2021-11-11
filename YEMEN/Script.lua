@@ -940,11 +940,14 @@ GetUserID(UserID,function(arg,data)
 ReUsername = ResolveUserName(data)
 NameUser = Hyper_Link_Name(data)
 if redis:sismember(js..'whitelist:'..arg.ChatID,arg.UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"✶⁞ المستخدم  ⌯⁞「 "..NameUser.." 」 \n- تم بالتاكيد رفعه مميز  في المجموعه") 
+return sendMsg(arg.ChatID,arg.MsgID,"
+✶︙العضو←「 "..NameUser.."」  \n⌯︙تم بالتاكيد رفعه مميز في المجموعة") 
 else
 redis:hset(js..'username:'..arg.UserID,'username',ReUsername)
 redis:sadd(js..'whitelist:'..arg.ChatID,arg.UserID)
-return sendMsg(arg.ChatID,arg.MsgID,"✶⁞ المستخدم  ⌯⁞「 "..NameUser.." 」 \n- تم رفعه مميز  في المجموعه") 
+return sendMsg(arg.ChatID,arg.MsgID,"
+✶︙ العضو←「 "..NameUser.." 」
+⌯︙تم رفعه مميز في المجموعة") 
 end
 end,{ChatID=arg.ChatID,UserID=UserID,MsgID=arg.MsgID})
 end,{ChatID=msg.chat_id_,MsgID=msg.id_})
@@ -964,11 +967,15 @@ return sendMsg(arg.ChatID,arg.MsgID,"✶⁞ عذرا هذا معرف قناة و
 end
 UserName = arg.UserName
 if redis:sismember(js..'whitelist:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"✶⁞ المستخدم  ⌯⁞「 "..NameUser.." 」 \n- تم بالتاكيد رفعه مميز  في المجموعه") 
+return sendMsg(arg.ChatID,arg.MsgID,"
+✶︙المستخدم←「 "..NameUser.." 」 \n
+⌯︙تم بالتاكيد رفعه مميز في المجموعة") 
 end
 redis:hset(js..'username:'..UserID,'username',UserName)
 redis:sadd(js..'whitelist:'..arg.ChatID,UserID)
-return sendMsg(arg.ChatID,arg.MsgID,"✶⁞ المستخدم  ⌯⁞「 "..NameUser.." 」 \n- تم رفعه مميز  في المجموعه") 
+return sendMsg(arg.ChatID,arg.MsgID,"
+✶︙المستخدم←「 "..NameUser.." 」 
+⌯︙تم رفعه مميز في المجموعة") 
 end,{ChatID=msg.chat_id_,MsgID=msg.id_,UserName=MsgText[2]})
 elseif MsgText[2] and MsgText[2]:match('^%d+$') then
 GetUserID(MsgText[2],action_by_id,{msg=msg,cmd="setwhitelist"})
@@ -976,6 +983,7 @@ end
 return false
 end
 
+ 
 if MsgText[1] == "تنزيل مميز" then
 if not msg.Admin then return "✶⁞ هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
 if not MsgText[2] and msg.reply_id then
