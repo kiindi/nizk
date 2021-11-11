@@ -1,4 +1,3 @@
-
 local function iJs(msg,MsgText)
 
 if msg.forward_info_ then return false end
@@ -16,13 +15,16 @@ return modadd(msg)
 end
 
 if MsgText[1] == "تعطيل" and not MsgText[2] then
-if not msg.SudoUser then return'✶⁞ هذا الامر يخص المطور فقط .' end
+if not msg.SudoUser then return'✶︙هذا الامر يخص المطور فقط .' end
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg 
 local NameUser   = Hyper_Link_Name(data)
-if not redis:get(js..'group:add'..msg.chat_id_) then return sendMsg(msg.chat_id_,msg.id_,'*❦ المجموعه بالتاكيد تم تعطيلها* \n*✶⁞ بواسطه* ⌯⁞「 '..NameUser..' 」 \n') end  
+if not redis:get(js..'group:add'..msg.chat_id_) then return sendMsg(msg.chat_id_,msg.id_,'
+*✶︙المجموعة بالتاكيد تم تعطيلها*\n*
+⌯︙بواسطة*←「 '..NameUser..' 」 \n') end  
 rem_data_group(msg.chat_id_)
-sendMsg(msg.chat_id_,msg.id_,'*❦ تـم تـعـطـيـل الـمـجـمـوعـه* \n*✶⁞ بواسطه ⌯⁞*「 '..NameUser..' 」 \n')
+sendMsg(msg.chat_id_,msg.id_,'
+*✶︙تم تعطيل المجموعة بنجاح*\n*⌯︙بواسطة ←*「 '..NameUser..' 」 \n')
 end,{msg=msg})
 end
 
@@ -38,12 +40,13 @@ if redis:get(js..'lock_id'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 
 local msgs = redis:get(js..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 1
-if data.username_ then UserNameID = "• 𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀 ➤@"..data.username_.." •\n" else UserNameID = "" end
+if data.username_ then UserNameID = "⌯︙الاسـم@"..data.username_.." •\n" else UserNameID = "" end
 if data.username_ then UserNameID1 = "@"..data.username_ else UserNameID1 = "لا يوجد" end
 if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ else Name = data.first_name_ end
 local Namei = FlterName(data,20)
 if data.status_.ID == "UserStatusEmpty" then
-sendMsg(arg.chat_id_,data.id_,' لا يمكنني عرض صورة بروفايلك لانك قمت بحظر البوت ... !\n\n')
+sendMsg(arg.chat_id_,data.id_,'
+✶︙لا يمكنني عرض صورة بروفايلك لانك قمت بحظر البوت ... !\n\n')
 else
 local infouser = https.request("https://api.telegram.org/bot"..Token.."/getChat?chat_id="..msg.sender_user_id_)
 local info_ = JSON.decode(infouser)
@@ -56,12 +59,12 @@ end
 GetPhotoUser(data.id_,function(arg,data)
 local edited = (redis:get(js..':edited:'..arg.chat_id_..':'..arg.sender_user_id_) or 0)
 
-local KleshaID = '• 𝙉𝘼𝙈𝙀 ➤  '..arg.Namei..'  ┣\n'
-..'• 𝙄𝘿 ➤{'..arg.sender_user_id_..' •\n'
+local KleshaID = '⌯︙اسمـك←'..arg.Namei..' \n'
+..'⌯︙ايديـك←{'..arg.sender_user_id_..' •\n'
 ..arg.UserNameID
-..'• 𝙎𝙏𝘼𝙏𝙎 ➤'..arg.TheRank..' •\n'
-..'• 𝗠𝗦𝗚  ➤ '..arg.msgs..' •\n'
-..'• 𝘽𝙄𝙊  ➤ '..biouser..' •\n'
+..'⌯︙ موقعـك←'..arg.TheRank..' •\n'
+..' '..arg.msgs..' •\n'
+..'⌯︙البايـو←'..biouser..' •\n'
 local Kleshaidinfo = redis:get(js..":infoiduser_public:"..arg.chat_id_) or redis:get(js..":infoiduser")  
 
 if Kleshaidinfo then 
@@ -83,7 +86,7 @@ if redis:get(js.."idphoto"..msg.chat_id_) then
 if data.photos_ and data.photos_[0] then 
 sendPhoto(arg.chat_id_,arg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,KleshaID,dl_cb,nil)
 else
-sendMsg(arg.chat_id_,arg.id_,'❦ لا يوجد صوره في بروفايلك ┣\n\n'..Flter_Markdown(KleshaID))
+sendMsg(arg.chat_id_,arg.id_,'⌯︙لا يوجد صوره في بروفايلك ⌯︙\n\n'..Flter_Markdown(KleshaID))
 end
 else
 sendMsg(arg.chat_id_,arg.id_,Flter_Markdown(KleshaID))
@@ -98,7 +101,6 @@ end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 
 end
 end
-
 
 
 
